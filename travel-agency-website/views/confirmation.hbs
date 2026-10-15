@@ -1,0 +1,36 @@
+<section class="section confirmation-section">
+  <div class="container">
+    <div class="confirmation-card">
+      <div class="confirm-icon">✦</div>
+      <h1>Booking Confirmed!</h1>
+      <p class="confirm-sub">Your adventure is locked in. Get ready to explore the world.</p>
+
+      <div class="confirm-ref">
+        Booking Reference: <strong>WL-{{booking._id}}</strong>
+      </div>
+
+      <div class="confirm-details">
+        <div class="confirm-row"><span>Traveller</span><strong>{{booking.firstName}} {{booking.lastName}}</strong></div>
+        <div class="confirm-row"><span>Email</span><strong>{{booking.email}}</strong></div>
+        <div class="confirm-row"><span>Trip</span><strong>{{booking.itemName}}</strong></div>
+        <div class="confirm-row"><span>Travellers</span><strong>{{booking.travellers}}</strong></div>
+        <div class="confirm-row"><span>Departure</span><strong>{{formatDate booking.departureDate}}</strong></div>
+        <div class="confirm-row"><span>Total Paid</span><strong class="price-large">{{formatPrice booking.total}}</strong></div>
+        <div class="confirm-row"><span>Status</span><strong class="status-confirmed">✓ {{booking.status}}</strong></div>
+      </div>
+
+      {{#if booking.specialRequests}}
+      <div class="confirm-requests">
+        <strong>Special Requests:</strong> {{booking.specialRequests}}
+      </div>
+      {{/if}}
+
+      <p class="confirm-email-note">A confirmation email has been sent to <strong>{{booking.email}}</strong></p>
+
+      <div class="confirm-actions">
+        <a href="/my-bookings" class="btn btn-primary">View All Bookings</a>
+        <a href="/destinations" class="btn btn-outline">Continue Exploring</a>
+      </div>
+    </div>
+  </div>
+</section>

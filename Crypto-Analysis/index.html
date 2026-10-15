@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Social Media Analytics Dashboard</h1>
+            <p>Comprehensive Social Media Performance Tracking</p>
+        </header>
+
+        <div class="platform-badges">
+            <div class="platform-badge facebook">📘 Facebook</div>
+            <div class="platform-badge instagram">📷 Instagram</div>
+            <div class="platform-badge twitter">🐦 Twitter</div>
+            <div class="platform-badge linkedin">💼 LinkedIn</div>
+            <div class="platform-badge youtube">▶️ YouTube</div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="platformSelect">🌐 Platform:</label>
+                <select id="platformSelect">
+                    <option value="all">All Platforms</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="youtube">YouTube</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="timeRange">📅 Time Range:</label>
+                <select id="timeRange">
+                    <option value="7">Last 7 Days</option>
+                    <option value="14">Last 14 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <button id="refreshBtn">🔄 Refresh Data</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">Analyzing data...</div>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value" id="totalFollowers">--</div>
+                <div class="stat-label">Total Followers</div>
+                <div class="stat-change positive" id="followersChange">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👍</div>
+                <div class="stat-value" id="totalEngagement">--</div>
+                <div class="stat-label">Total Engagement</div>
+                <div class="stat-change positive" id="engagementChange">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div class="stat-value" id="totalPosts">--</div>
+                <div class="stat-label">Total Posts</div>
+                <div class="stat-change positive" id="postsChange">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-value" id="avgEngagementRate">--</div>
+                <div class="stat-label">Avg Engagement Rate</div>
+                <div class="stat-change positive" id="engagementRateChange">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👁️</div>
+                <div class="stat-value" id="totalReach">--</div>
+                <div class="stat-label">Total Reach</div>
+                <div class="stat-change positive" id="reachChange">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💬</div>
+                <div class="stat-value" id="totalComments">--</div>
+                <div class="stat-label">Total Comments</div>
+                <div class="stat-change positive" id="commentsChange">--</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container full-width">
+                <div class="chart-title">Follower Growth Over Time</div>
+                <canvas id="followersChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Engagement by Platform</div>
+                <canvas id="platformChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Content Type Performance</div>
+                <canvas id="contentTypeChart"></canvas>
+            </div>
+            
+            <div class="chart-container full-width">
+                <div class="chart-title">Daily Engagement Metrics</div>
+                <canvas id="engagementChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Post Performance Distribution</div>
+                <canvas id="postPerformanceChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Best Posting Times (Hour of Day)</div>
+                <canvas id="timingChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

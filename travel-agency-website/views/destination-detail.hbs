@@ -1,0 +1,84 @@
+<div class="detail-hero">
+  <img src="{{destination.image}}" alt="{{destination.name}}" class="detail-hero-img" />
+  <div class="hero-overlay"></div>
+  <div class="detail-hero-content">
+    <span class="dest-card-category">{{destination.category}}</span>
+    <h1>{{destination.name}}</h1>
+    <p class="hero-subtitle">{{destination.tagline}}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container detail-layout">
+
+    <div class="detail-main">
+      <div class="detail-meta-bar">
+        <div class="detail-meta-item">
+          <span class="meta-label">Rating</span>
+          <span class="meta-value"><span class="stars-gold">★</span> {{destination.rating}} <span class="reviews">({{destination.reviews}} reviews)</span></span>
+        </div>
+        <div class="detail-meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">{{destination.duration}}</span>
+        </div>
+        <div class="detail-meta-item">
+          <span class="meta-label">Starting From</span>
+          <span class="meta-value price-large">{{formatPrice destination.price}} <small>/ person</small></span>
+        </div>
+      </div>
+
+      <h2>About This Destination</h2>
+      <p class="detail-description">{{destination.description}}</p>
+
+      <h2>Trip Highlights</h2>
+      <ul class="highlights-list">
+        {{#each destination.highlights}}
+        <li><span class="highlight-dot">✦</span> {{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <aside class="detail-sidebar">
+      <div class="booking-card">
+        <h3>Reserve Your Place</h3>
+        <div class="booking-price">
+          <span>From</span>
+          <strong>{{formatPrice destination.price}}</strong>
+          <span>per person</span>
+        </div>
+        <div class="booking-duration">Duration: {{destination.duration}}</div>
+        <a href="/book/destination/{{destination._id}}" class="btn btn-primary btn-block">Book This Trip</a>
+        <a href="/contact" class="btn btn-outline btn-block">Ask an Expert</a>
+        <p class="booking-note">✓ Free cancellation up to 60 days before departure</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{{#if related.length}}
+<section class="section">
+  <div class="container">
+    <h2 class="section-title-sm">You Might Also Like</h2>
+    <div class="card-grid related-grid">
+      {{#each related}}
+      <article class="dest-card">
+        <a href="/destinations/{{_id}}" class="dest-card-link">
+          <div class="dest-card-img-wrap">
+            <img src="{{image}}" alt="{{name}}" class="dest-card-img" loading="lazy" />
+            <span class="dest-card-category">{{category}}</span>
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-card-name">{{name}}</h3>
+            <p class="dest-card-tagline">{{tagline}}</p>
+            <div class="dest-card-footer">
+              <div class="dest-rating"><span class="stars-gold">★</span> {{rating}}</div>
+              <div class="dest-price">From <strong>{{formatPrice price}}</strong></div>
+            </div>
+          </div>
+        </a>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>
+{{/if}}

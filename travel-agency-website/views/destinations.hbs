@@ -1,0 +1,73 @@
+<section class="page-hero page-hero-sm">
+  <div class="page-hero-content">
+    <p class="eyebrow">Explore the Globe</p>
+    <h1>Our Destinations</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Filters -->
+    <form class="filters-bar" method="GET" action="/destinations">
+      <div class="filter-group">
+        <label>Category</label>
+        <div class="filter-pills">
+          <a href="/destinations" class="pill {{#unless activeCategory}}pill-active{{/unless}} {{#if (eq activeCategory 'all')}}pill-active{{/if}}">All</a>
+          <a href="/destinations?category=Beach{{#if activeSort}}&sort={{activeSort}}{{/if}}" class="pill {{#if (eq activeCategory 'Beach')}}pill-active{{/if}}">Beach</a>
+          <a href="/destinations?category=Cultural{{#if activeSort}}&sort={{activeSort}}{{/if}}" class="pill {{#if (eq activeCategory 'Cultural')}}pill-active{{/if}}">Cultural</a>
+          <a href="/destinations?category=Adventure{{#if activeSort}}&sort={{activeSort}}{{/if}}" class="pill {{#if (eq activeCategory 'Adventure')}}pill-active{{/if}}">Adventure</a>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label for="sort">Sort by</label>
+        <select name="sort" id="sort" class="filter-select" onchange="this.form.submit()">
+          <option value="">Featured</option>
+          <option value="rating" {{#if (eq activeSort 'rating')}}selected{{/if}}>Highest Rated</option>
+          <option value="price-asc" {{#if (eq activeSort 'price-asc')}}selected{{/if}}>Price: Low → High</option>
+          <option value="price-desc" {{#if (eq activeSort 'price-desc')}}selected{{/if}}>Price: High → Low</option>
+        </select>
+        {{#if activeCategory}}<input type="hidden" name="category" value="{{activeCategory}}" />{{/if}}
+      </div>
+    </form>
+
+    <!-- Results count -->
+    <p class="results-count">{{destinations.length}} destination{{#if (gt destinations.length 1)}}s{{/if}} found</p>
+
+    <!-- Grid -->
+    <div class="card-grid dest-grid">
+      {{#each destinations}}
+      <article class="dest-card">
+        <a href="/destinations/{{_id}}" class="dest-card-link">
+          <div class="dest-card-img-wrap">
+            <img src="{{image}}" alt="{{name}}" class="dest-card-img" loading="lazy" />
+            <span class="dest-card-category">{{category}}</span>
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-card-name">{{name}}</h3>
+            <p class="dest-card-tagline">{{tagline}}</p>
+            <div class="dest-card-footer">
+              <div class="dest-rating">
+                <span class="stars-gold">★</span> {{rating}}
+                <span class="reviews">({{reviews}})</span>
+              </div>
+              <div class="dest-price">
+                From <strong>{{formatPrice price}}</strong>
+              </div>
+            </div>
+            <div class="dest-card-cta">
+              <span class="dest-duration">{{duration}}</span>
+              <span class="dest-view-link">View Details →</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {{else}}
+      <div class="empty-state">
+        <p>No destinations found for this filter.</p>
+        <a href="/destinations" class="btn btn-outline">Clear Filters</a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

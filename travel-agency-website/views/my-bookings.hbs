@@ -1,0 +1,48 @@
+<section class="page-hero page-hero-sm">
+  <div class="page-hero-content">
+    <p class="eyebrow">Your Travel History</p>
+    <h1>My Bookings</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{#if hasBookings}}
+    <div class="bookings-table-wrap">
+      <table class="bookings-table">
+        <thead>
+          <tr>
+            <th>Ref</th>
+            <th>Trip</th>
+            <th>Traveller</th>
+            <th>Guests</th>
+            <th>Departure</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bookings}}
+          <tr>
+            <td><code>WL-{{_id}}</code></td>
+            <td><strong>{{itemName}}</strong></td>
+            <td>{{firstName}} {{lastName}}<br /><small>{{email}}</small></td>
+            <td>{{travellers}}</td>
+            <td>{{formatDate departureDate}}</td>
+            <td><strong>{{formatPrice total}}</strong></td>
+            <td><span class="status-confirmed">✓ {{status}}</span></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{else}}
+    <div class="empty-state-center">
+      <div class="empty-icon">✦</div>
+      <h2>No bookings yet</h2>
+      <p>Your next great adventure starts with a single click.</p>
+      <a href="/destinations" class="btn btn-primary">Explore Destinations</a>
+    </div>
+    {{/if}}
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="page-hero page-hero-sm">
+  <div class="page-hero-content">
+    <p class="eyebrow">All-Inclusive Solutions</p>
+    <h1>Holiday Packages</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="pkg-full-grid">
+      {{#each packages}}
+      <article class="pkg-full-card">
+        <div class="pkg-full-img-wrap">
+          <img src="{{image}}" alt="{{name}}" class="pkg-full-img" loading="lazy" />
+          {{#if badge}}<span class="badge {{badgeClass badge}}">{{badge}}</span>{{/if}}
+        </div>
+        <div class="pkg-full-body">
+          <h2>{{name}}</h2>
+          <p class="pkg-destinations-full">{{join destinations " · "}}</p>
+          <div class="pkg-inclusions-grid">
+            {{#each inclusions}}
+            <span class="inclusion-tag">✓ {{this}}</span>
+            {{/each}}
+          </div>
+          <div class="pkg-full-footer">
+            <div class="pkg-full-meta">
+              <div><span class="meta-label">Duration</span><span class="meta-value">{{duration}}</span></div>
+              <div><span class="meta-label">From</span><span class="meta-value price-large">{{formatPrice price}} <small>/person</small></span></div>
+            </div>
+            <a href="/book/package/{{_id}}" class="btn btn-primary">Book This Package</a>
+          </div>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <p>Can't find what you're looking for? <strong>We build bespoke itineraries too.</strong></p>
+    <a href="/contact" class="btn btn-outline">Get a Custom Quote</a>
+  </div>
+</section>

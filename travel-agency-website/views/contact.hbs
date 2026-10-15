@@ -1,0 +1,63 @@
+<section class="page-hero page-hero-sm">
+  <div class="page-hero-content">
+    <p class="eyebrow">Let's Plan Your Journey</p>
+    <h1>Contact Us</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+
+    <div class="contact-info">
+      <h2>Speak With a Travel Specialist</h2>
+      <p>Our experts are ready to craft your perfect itinerary — from a weekend escape to a six-month sabbatical.</p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="contact-icon">✦</span>
+          <div>
+            <strong>Email</strong>
+            <p>hello@wanderlux.travel</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">◈</span>
+          <div>
+            <strong>Phone</strong>
+            <p>123456789</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">◉</span>
+          <div>
+            <strong>Hours</strong>
+            <p>Mon – Fri, 9am – 6pm (IST)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      {{#if success}}
+      <div class="alert-success">{{success}}</div>
+      {{/if}}
+
+      <form action="/contact" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Rahul Sharma" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell us about your dream trip..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>

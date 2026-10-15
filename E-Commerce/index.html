@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-shopping-bag"></i> Fashion Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#mens">Men's</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#womens">Women's</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kids">Kids</a></li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span class="cart-badge" id="cartCount">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <button class="btn btn-login" id="loginBtn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-user"></i> Login
+                        </button>
+                        <div class="dropdown" id="userDropdown" style="display: none;">
+                            <button class="btn btn-login dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle"></i> <span id="userName"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Fashion Hub</h1>
+            <p class="lead">Discover Your Style, Define Your Look</p>
+            <button class="btn btn-light btn-lg mt-3" onclick="document.getElementById('mens').scrollIntoView({behavior: 'smooth'})">
+                Shop Now <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Men's Section -->
+    <section id="mens" class="container">
+        <h2 class="section-title">Men's Collection</h2>
+        <div class="row" id="mensProducts"></div>
+    </section>
+
+    <!-- Women's Section -->
+    <section id="womens" class="container">
+        <h2 class="section-title">Women's Collection</h2>
+        <div class="row" id="womensProducts"></div>
+    </section>
+
+    <!-- Kids Section -->
+    <section id="kids" class="container">
+        <h2 class="section-title">Kids Collection</h2>
+        <div class="row" id="kidsProducts"></div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-user-circle"></i> Login to Fashion Hub</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="login-form" id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required minlength="6">
+                            <small class="text-muted">Password must be at least 6 characters</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password" required>
+                            <small class="text-danger" id="passwordError" style="display: none;">Passwords do not match!</small>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login / Sign Up</button>
+                        <p class="text-center mt-3 mb-0 text-muted">By continuing, you agree to our Terms & Conditions</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-shopping-cart"></i> Your Shopping Cart</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <p class="text-center text-muted">Your cart is empty</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5>Total:</h5>
+                            <h5 class="text-danger" id="cartTotal">$0.00</h5>
+                        </div>
+                        <button class="btn btn-buy w-100" id="checkoutBtn" onclick="checkout()">
+                            <i class="fas fa-credit-card"></i> Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Success Overlay -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+        <div class="checkout-success">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="mb-3">Order Placed Successfully!</h2>
+            <p class="text-muted mb-2">Order ID: #<span id="orderId"></span></p>
+            <h4 class="text-success mb-4">Total: $<span id="orderTotal"></span></h4>
+            <p class="mb-4">Thank you for shopping with Fashion Hub!</p>
+            <p class="text-muted small">A confirmation email has been sent to your registered email address.</p>
+            <button class="btn btn-primary mt-3" onclick="closeCheckout()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-shopping-bag"></i> Fashion Hub</h5>
+                    <p>Your one-stop destination for trendy fashion.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <div>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3)">
+            <p class="text-center mb-0">&copy; 2024 Fashion Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

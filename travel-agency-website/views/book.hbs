@@ -1,0 +1,113 @@
+<section class="page-hero page-hero-sm">
+  <div class="page-hero-content">
+    <p class="eyebrow">Secure Your Adventure</p>
+    <h1>Book Your Trip</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container booking-layout">
+
+    <!-- Summary Sidebar -->
+    <aside class="booking-summary-card">
+      <h3>Your Selection</h3>
+      <h4>{{item.name}}</h4>
+      {{#if item.tagline}}<p class="summary-tagline">{{item.tagline}}</p>{{/if}}
+      {{#if item.destinations}}<p class="summary-tagline">{{join item.destinations " · "}}</p>{{/if}}
+      <div class="summary-row"><span>Duration</span><strong>{{item.duration}}</strong></div>
+      <div class="summary-row"><span>Price per person</span><strong>{{formatPrice item.price}}</strong></div>
+      {{#if item.inclusions}}
+      <div class="summary-inclusions">
+        {{#each item.inclusions}}
+        <span class="inclusion-tag">✓ {{this}}</span>
+        {{/each}}
+      </div>
+      {{/if}}
+      {{#if item.highlights}}
+      <div class="summary-inclusions">
+        {{#each item.highlights}}
+        <span class="inclusion-tag">✦ {{this}}</span>
+        {{/each}}
+      </div>
+      {{/if}}
+      <p class="booking-note">✓ Free cancellation up to 60 days before departure<br />✓ Secure, encrypted payment</p>
+    </aside>
+
+    <!-- Form -->
+    <div class="booking-form-wrap">
+      <form action="/book" method="POST" class="booking-form">
+        <input type="hidden" name="itemId"    value="{{item._id}}" />
+        <input type="hidden" name="itemType"  value="{{type}}" />
+        <input type="hidden" name="itemName"  value="{{item.name}}" />
+        <input type="hidden" name="itemPrice" value="{{item.price}}" />
+
+        <h2>Traveller Details</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Aisha" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Kapoor" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98000 00000" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="travellers">Number of Travellers</label>
+            <select id="travellers" name="travellers">
+              <option value="1">1 Traveller</option>
+              <option value="2" selected>2 Travellers</option>
+              <option value="3">3 Travellers</option>
+              <option value="4">4 Travellers</option>
+              <option value="5">5+ Travellers</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="departureDate">Preferred Departure Date</label>
+            <input type="date" id="departureDate" name="departureDate" required min="2025-01-01" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="specialRequests">Special Requests <span class="optional">(optional)</span></label>
+          <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Dietary requirements, accessibility needs, anniversary celebrations..."></textarea>
+        </div>
+
+        <div class="form-total" id="formTotal">
+          Total: <strong id="totalDisplay">{{formatPrice item.price}}</strong>
+          <span id="perPersonNote">(1 traveller × {{formatPrice item.price}})</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm Booking</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const price = {{item.price}};
+  const sel   = document.getElementById('travellers');
+  const total = document.getElementById('totalDisplay');
+  const note  = document.getElementById('perPersonNote');
+  function fmt(n) { return '$' + n.toLocaleString(); }
+  sel.addEventListener('change', () => {
+    const n = parseInt(sel.value);
+    total.textContent = fmt(price * n);
+    note.textContent  = `(${n} traveller${n>1?'s':''} × ${fmt(price)})`;
+  });
+</script>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virjeet Kakekar - Software Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">VK</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-intro">
+                    <!-- Added profile picture with circular frame -->
+                    <div class="profile-image-container">
+                        <img src="/image.png" alt="Virjeet Kakekar" class="profile-image">
+                    </div>
+                    <h1 class="hero-name">Virjeet Kakekar</h1>
+                    <p class="hero-title">Computer Engineering Student & Developer</p>
+                    <p class="hero-description">
+                        I build innovative solutions combining data science, full-stack development, 
+                        and machine learning to solve real-world problems.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-sidebar">
+                    <a href="#about" class="sidebar-link active">About</a>
+                    <a href="#experience" class="sidebar-link">Experience</a>
+                    <a href="#projects" class="sidebar-link">Projects</a>
+                    <a href="#skills" class="sidebar-link">Skills</a>
+                </div>
+            </div>
+            <div class="hero-social">
+                <a href="tel:9890070341" class="social-link" aria-label="Phone">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                </a>
+                <a href="mailto:virjeet.kakekar23@pccoepune.org" class="social-link" aria-label="Email">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="text-lg">
+                        I'm a Computer Engineering student at Pimpri Chinchwad College of Engineering, 
+                        passionate about building innovative software solutions that make a real impact.
+                    </p>
+                    <p>
+                        Currently working as a Data Science Intern at AICTE, where I've gained hands-on 
+                        experience in machine learning, data analysis, and project management. I've completed 
+                        multiple certifications in data structures, algorithms, full-stack web development, 
+                        and Java programming.
+                    </p>
+                    <p>
+                        My work spans across web development, machine learning, and data science, with a 
+                        focus on creating user-friendly applications that solve practical problems.
+                    </p>
+                </div>
+                <div class="education-card">
+                    <h3 class="card-title">Education</h3>
+                    <div class="education-item">
+                        <h4>Bachelor of Technology</h4>
+                        <p class="text-muted">Computer Engineering</p>
+                        <p class="text-muted">Pimpri Chinchwad College of Engineering, Pune</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Science Intern</h3>
+                            <span class="timeline-date">Jul 2025 – Present</span>
+                        </div>
+                        <p class="timeline-company">AICTE, Pune</p>
+                        <ul class="timeline-list">
+                            <li>Gained practical experience in Data Science through a formal industrial program and internship</li>
+                            <li>Completed multiple data science projects under the guidance of a mentor and company representative</li>
+                            <li>Demonstrated dedication, diligence, and a strong work ethic during the internship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3 class="subsection-title">Certifications</h3>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">📊</div>
+                        <h4>Data Structure and Algorithms</h4>
+                        <p class="text-muted">NPTEL - Python</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🌐</div>
+                        <h4>Full Stack Web Development</h4>
+                        <p class="text-muted">Udemy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">☕</div>
+                        <h4>Java MasterClass</h4>
+                        <p class="text-muted">Udemy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🔬</div>
+                        <h4>Data Science</h4>
+                        <p class="text-muted">AICTE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Scholarship Recommendation Website</h3>
+                        <span class="project-date">Jan 2025 – Apr 2025</span>
+                    </div>
+                    <p class="project-description">
+                        Developed a platform that recommends scholarships based on user input with integrated 
+                        Gemini AI chatbot for real-time support.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Integrated Gemini AI chatbot and MongoDB for real-time support and storage</li>
+                        <li>Built personalized recommendation system based on user profiles</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Heart Failure Mortality Predictor</h3>
+                        <span class="project-date">Jul 2025 – Aug 2025</span>
+                    </div>
+                    <p class="project-description">
+                        Implemented SVM and ANN models to predict mortality risk in patients using machine learning techniques.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Preprocessed data with StandardScaler and evaluated with classification metrics</li>
+                        <li>Achieved high accuracy in mortality risk prediction</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Hate Speech Detection</h3>
+                        <span class="project-date">Jul 2025</span>
+                    </div>
+                    <p class="project-description">
+                        Developed a Decision Tree classifier to detect hate speech in tweets with preprocessing and validation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">ML</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Validated performance using preprocessing, accuracy score, and confusion matrix</li>
+                        <li>Implemented text preprocessing and feature extraction</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Credit Application Analysis</h3>
+                        <span class="project-date">Aug 2025</span>
+                    </div>
+                    <p class="project-description">
+                        Performed exploratory data analysis on credit application dataset to extract trends and insights.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Handled missing values and engineered categorical features like Credit Score Category</li>
+                        <li>Visualized insights using Matplotlib and Seaborn</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Simon Game</h3>
+                        <span class="project-date">Dec 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Built a Simon memory game generating increasingly complex color sequences with interactive gameplay.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Enhanced engagement with responsive and interactive gameplay mechanics</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Drum Kit Web App</h3>
+                        <span class="project-date">Dec 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Designed an interactive virtual drum kit responding to mouse clicks and keyboard inputs.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Created a responsive interface simulating a real band experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">FastAPI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Developer Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Visual Studio</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="text-lg">
+                        I'm always interested in hearing about new projects and opportunities. 
+                        Whether you have a question or just want to say hi, feel free to reach out.
+                    </p>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:virjeet.kakekar23@pccoepune.org" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p class="text-muted">virjeet.kakekar23@pccoepune.org</p>
+                        </div>
+                    </a>
+                    <a href="tel:9890070341" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p class="text-muted">9890070341</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Virjeet Kakekar. Crafted with passion and code.</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
